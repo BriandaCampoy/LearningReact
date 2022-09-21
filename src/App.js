@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Ayer tronaba pero hoy no
         </a>
       </header>
     </div>
