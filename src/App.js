@@ -1,29 +1,35 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import TodoCounter from './TodoCounter.js';
+import TodoSearch from './TodoSearch';
+import { TodoItem } from './TodoItem';
+import { TodoList } from './TodoList';
+import {CreateTodoButton} from './CreateTodoButton.js';
 
-const url ='https://i.gifer.com/origin/82/821db1c1269c1d2d78abada219a95744.gif'
+
+// const url ='https://i.gifer.com/origin/82/821db1c1269c1d2d78abada219a95744.gif'
+const todos =[
+  {text:'Abrir el acti',completed:false},
+  {text:'Saludar a la rata',completed:false},
+  {text:'Estudiar react',completed:false},
+  {text:'Reunion con rr',completed:false}
+]
 
 function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={url} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>Aqui a los parametros se les llama atributos este es uno {props.msj}</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ayer tronaba pero hoy no
-        </a>
-        {/* Y el parametro especial se accede asi */}
-        {props.children}
-      </header>
-    </div>
+    <React.Fragment>
+      <TodoCounter/>
+      <TodoSearch/>
+     
+      <TodoList>
+        {todos.map(todo=>(
+          <TodoItem key={"23"} text={todo.text}/>
+        ))}
+      </TodoList>
+
+      <CreateTodoButton/>
+    </React.Fragment>
   );
 }
 
