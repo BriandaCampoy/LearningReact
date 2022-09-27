@@ -1,7 +1,9 @@
 import React from 'react';
 
 function CreateTodoButton(){
-    <button>+</button>
+    return(
+        <button>+</button>
+    );
 }
 
-export {CreateTodoButton};
+export default CreateTodoButton;
