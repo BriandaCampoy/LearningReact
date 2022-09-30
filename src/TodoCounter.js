@@ -1,4 +1,4 @@
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+// import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import './TodoCounter.css'
 
@@ -9,9 +9,9 @@ import './TodoCounter.css'
 // Otra forma de aplicar esto seria
 // <h2 Style={estilos}></h2>
 
-function TodoCounter(){
+function TodoCounter({total, completed}){
     return(
-        <h2 className="TodoCounter">Has completado 2 de 3</h2>
+        <h2 className="TodoCounter">Has completado {completed} de {total}</h2>
     );
 }
 

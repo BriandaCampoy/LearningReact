@@ -1,0 +1,22 @@
+.btnTodo{
+    position: fixed;
+    bottom: 1px;
+    right: 1px;
+    margin:20px;
+    font-weight: 700;
+    font-size: 40px;
+    border-radius:50px;
+    border:none;
+    background-color: lightblue;
+    color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+    transform:rotate(0);
+    transition: .3s ease;
+}
+
+.btnTodo:hover{
+    transform: rotate(224deg);
+}

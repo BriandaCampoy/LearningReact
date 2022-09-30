@@ -1,8 +1,17 @@
 import React from 'react';
+import './CreateTodoButton.css';
 
 function CreateTodoButton(){
+    const onClickButton = (msg)=>{
+        alert(msg);
+    }
     return(
-        <button>+</button>
+        <button 
+            className="btnTodo" 
+            onClick={()=>onClickButton("El mensaje")}
+            >
+                +
+        </button>
     );
 }
 

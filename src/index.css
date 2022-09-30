@@ -9,12 +9,17 @@ body {
   padding: 0;
   background: #F2F4F5;
   color: #1E1E1F;
+  box-sizing: border-box;
 }
 
 #root{
   margin: 0 24px;
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
 }
 
 code {
