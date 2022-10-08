@@ -1,0 +1,30 @@
+.TodoItem{
+    background-color: white;
+    margin:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width:80vw;
+}
+
+.Icon-delete{
+    font-weight: 700;
+    align-self: flex-start;
+}
+
+.Icon-delete:hover{
+    color:red;
+}
+
+.Icon-check{
+    font-weight: 700;
+}
+.Icon-check--active{
+    color: #4caf50;
+}
+
+.TodoItem-p--complete
+{
+    text-decoration: line-through;
+}
