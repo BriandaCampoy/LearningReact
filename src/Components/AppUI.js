@@ -5,8 +5,11 @@ import TodoSearch from './TodoSearch';
 import { TodoItem } from './TodoItem';
 import { TodoList } from './TodoList';
 import CreateTodoButton from './CreateTodoButton.js';
+import { TodoContext } from "./TodoContext";
 
 function AppUI({
+    loading,
+    error,
     totalTodos,
     completedTodos,
     searchValue,
@@ -17,26 +20,30 @@ function AppUI({
 }){
     return(
         <React.Fragment>
-      <TodoCounter 
-      total={totalTodos} 
-      completed={completedTodos}
-      />
-      <TodoSearch
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      />
+      <TodoCounter/>
+      <TodoSearch/>
      
-      <TodoList>
-        {filtredList.map(todo=>(
-          <TodoItem 
-          key={todo.text} 
-          text={todo.text} 
-          completed={todo.completed}
-          onComplete = {()=>completeTodo(todo.text)}
-          onDelete = {()=>deleteTodo(todo.text)}
-          />
-        ))}
+    <TodoContext.Consumer>
+      {({error,loading,filtredList,completeTodo,deleteTodo})=>{
+        return(
+          <TodoList>
+            {error && <p>Jaja trono</p>}
+            {loading && <p>Cargando</p>}
+            {(!loading && !filtredList.length && !error) && <p>Jalo</p>}
+
+            {filtredList.map(todo=>(
+              <TodoItem 
+              key={todo.text} 
+              text={todo.text} 
+              completed={todo.completed}
+              onComplete = {()=>completeTodo(todo.text)}
+              onDelete = {()=>deleteTodo(todo.text)}
+              />
+            ))}
       </TodoList>
+        )
+      }}
+    </TodoContext.Consumer>
 
       <CreateTodoButton/>
     </React.Fragment>
