@@ -5,7 +5,7 @@ import {TodoProvider} from './TodoContext';
 
 
 
-function App(props) {
+function App() {
   // React.useEffect(()=>{
   //   console.log("USE effect")
   // },[totalTodos])

@@ -1,15 +1,17 @@
 import React from 'react';
 import '../Styles/CreateTodoButton.css';
+import { TodoContext } from "./TodoContext";
 
 function CreateTodoButton(){
-    const onClickButton = (msg)=>{
-        alert(msg);
+    const {openModal, setOpenModal} = React.useContext(TodoContext);
+    const onClickButton = ()=>{
+        setOpenModal(!openModal);
     }
     
     return(
         <button 
             className="btnTodo" 
-            onClick={()=>onClickButton("El mensaje")}
+            onClick={onClickButton}
             >
                 +
         </button>
