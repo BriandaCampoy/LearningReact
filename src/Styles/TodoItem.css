@@ -7,8 +7,16 @@
     padding: 10px;
     width:80vw;
 }
+.TodoItem-p {
+    color: #1E1E1F;
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+  }
 
-.Icon-delete{
+/* .Icon-delete{
     font-weight: 700;
     align-self: flex-start;
 }
@@ -22,7 +30,7 @@
 }
 .Icon-check--active{
     color: #4caf50;
-}
+} */
 
 .TodoItem-p--complete
 {
