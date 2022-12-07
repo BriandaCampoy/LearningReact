@@ -1,13 +1,12 @@
-import React from 'react';
-// import ReactDOM from 'react-dom/client';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './Components/App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from './Components/App/App';
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-ReactDOM.render(
-  // Con etiqueta de apartura y cierre se puede enviar
-  // un parametro especial que en este caso seria otro componente
-    <App/>,
-  document.getElementById('root')
-)

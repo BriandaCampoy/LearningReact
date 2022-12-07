@@ -1,7 +1,7 @@
 import React from 'react'
-import '../Styles/TodoIcon.css'
-import {ReactComponent as CheckSVG} from '../assets/check.svg';
-import {ReactComponent as DeleteSVG} from '../assets/delete.svg';
+import './TodoIcon.css'
+import {ReactComponent as CheckSVG} from './check.svg';
+import {ReactComponent as DeleteSVG} from './delete.svg';
 
 const iconTypes = {
     "check":color =>(

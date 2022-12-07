@@ -1,10 +1,9 @@
 import React from 'react';
-// import { createContext } from './';
 import {useLocalStorage} from './useLocalStorage';
 
-const TodoContext = React.createContext();
+// const TodoContext = React.createContext();
 
-function TodoProvider(props){
+function useTodos(){
     const {
       item:todos,
       saveItem:saveTodos,
@@ -14,19 +13,20 @@ function TodoProvider(props){
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
   
-    let filtredList= [];
+    let todosBruto = todos.length;
+    let searchedTodos= [];
     if(!searchValue.length>=1){
-      filtredList=todos;
+      searchedTodos=todos;
     }else{
-      filtredList = todos.filter(todo=>{
+      searchedTodos = todos.filter(todo=>{
         const todoText = todo.text.toLowerCase();
         const searchText = searchValue.toLowerCase();
         return todoText.includes(searchText);
       })
-      // filtredList = todos.filter(todo=>todo.text.toLowerCase().includes(searchValue.toLowerCase()))
+      // searchedTodos = todos.filter(todo=>todo.text.toLowerCase().includes(searchValue.toLowerCase()))
     }
-    const completedTodos = filtredList.filter(todo=>todo.completed).length;
-    const totalTodos = filtredList.length;
+    const completedTodos = searchedTodos.filter(todo=>todo.completed).length;
+    const totalTodos = searchedTodos.length;
   
     const completeTodo = (text) =>{
       const todoIndex = todos.findIndex(todo => todo.text === text);
@@ -53,24 +53,21 @@ function TodoProvider(props){
     }
   
     return(
-        <TodoContext.Provider value={{
+       {
             loading,
             error,
             totalTodos,
             completedTodos,
             searchValue,
             setSearchValue,
-            filtredList,
+            searchedTodos,
+            addTodo,
             completeTodo, 
             deleteTodo,
             openModal,
             setOpenModal,
-            addTodo,
-        }}>
-            {props.children}
-        </TodoContext.Provider>
+            todosBruto
+        }
     )
 }
-
-
-export {TodoContext, TodoProvider}
+export { useTodos }
