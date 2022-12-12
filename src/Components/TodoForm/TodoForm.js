@@ -26,8 +26,8 @@ function TodoForm({addTodo, setOpenModal}) {
         placeholder='Tarea a realizar'
       />
       <div className="btn-conteiner">
-        <button className="btnCancelar" id="cancelar" onClick={onCancel}>Cancelar</button>
-        <button className="btnPrimary" id="agregar" type='submit'>Añadir</button>
+        <button className="TodoForm-button TodoForm-button--cancel" id="cancelar" onClick={onCancel}>Cancelar</button>
+        <button className="TodoForm-button TodoForm-button--add" id="agregar" type='submit'>Añadir</button>
       </div>
     </form>
   )
