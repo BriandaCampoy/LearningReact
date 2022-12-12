@@ -41,7 +41,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/BriandaCampoy/LearningReact.git"
+    "url": "git+ssh://git@github.com/BriandaCampoy/TodoMachine.git"
   },
   "keywords": [
     "react"
@@ -49,10 +49,10 @@
   "author": "BriandaCampoy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BriandaCampoy/LearningReact/issues"
+    "url": "https://github.com/BriandaCampoy/TodoMachine/issues"
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage":"https://BriandaCampoy.github.io/LearningReact"
+  "homepage":"https://BriandaCampoy.github.io/TodoMachine"
 }
