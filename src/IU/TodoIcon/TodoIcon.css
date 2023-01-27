@@ -26,3 +26,6 @@
 .Icon-container:hover .Icon-svg--delete{
     fill:red;
 }
+.Icon-container:hover .Icon-svg--edit{
+    fill:lightblue;
+}
